@@ -1,0 +1,126 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    font-family: Poppins, Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #013974;
+}
+
+main {
+    width: 98vw;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    background-color: white;
+    box-shadow: 0px 0px 50px #000e1d;
+    border-radius: 20px;
+    margin: 50px 0px;
+    width: 500px;
+    font-size: 1.5em;
+    padding: 40px;
+    min-height: 500px;
+}
+
+div.img {
+    width: 100%;
+    border: 3px solid #013974;
+    box-shadow: 0px 0px 5px #026bdb;
+    box-sizing: border-box;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+div.img > img {
+    width: 100%;
+}
+
+.conteudo {
+    display: flex;
+    justify-content: space-between;
+}
+
+section {
+    padding: 20px;
+}
+
+.inpt-group {
+    display: block;
+}
+
+div.aluno {
+    margin-bottom: 20px;
+}
+
+input {
+    border: 2px solid #013974;
+}
+
+input:focus {
+    border: 2px solid #013974;
+    outline: none;
+}
+
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input#aluno {
+    width: 58%;
+}
+
+input#freq {
+    width: 37%;
+}
+
+aside {
+    margin-right: 20px;
+}
+
+#media {
+    width: 70px; 
+    height: 70px;
+    padding: 10px;
+    margin-left: 10px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #f9f9f9; 
+    cursor: auto; 
+    user-select: none; /* Impede a seleção do texto */
+    -webkit-user-select: none; /* Para navegadores baseados em WebKit */
+    -moz-user-select: none; /* Para navegadores Firefox */
+    -ms-user-select: none; /* Para navegadores baseados em Internet Explorer/Edge */
+}
+
+button {
+    width: 49.3%;
+    background-color: rgb(255, 255, 255);
+    border: 2px solid #013974;
+    height: 50px;
+    font-size: 1em;
+    font-weight: bold; 
+    color: #013974;
+    border-radius: 30px;
+}
+
+button:hover {
+    background-color: #013974;
+    color: white;
+    box-shadow: 0px 0px 10px #026bdb;
+}
+
+div.resultado > p {
+    margin-top: 20px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boletim UNG</title>
+    <link rel="stylesheet" href="css/estilo.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="javascript/script.js"></script>   
+</head>
+<body>
+    <main>
+        <form id="Formulario">
+            <div class="img">
+                <img src="img/banner.jpeg" alt="">
+            </div>
+            <div class="conteudo">
+                <section>
+                    <div class="aluno">
+                        <div class="inpt-group ">
+                            <label for="aluno">Aluno:</label>
+                            <input type="text" name="" id="aluno" autocomplete="off">
+                        </div>
+                        <div class="inpt-group ">
+                            <label for="freq">Frequência:</label>
+                            <input type="number" name="" id="freq" autocomplete="off">
+                        </div>
+                    </div>
+                    <div class="inpt-group">
+                        <label for="nota1">&nbsp;1° Nota:</label>
+                        <input type="number" name="" id="nota1" autocomplete="off">
+                    </div>
+                    <div class="inpt-group">
+                        <label for="nota2">2° Nota:</label>
+                        <input type="number" name="" id="nota2" autocomplete="off">
+                    </div>
+                    <div class="inpt-group">
+                        <label for="nota3">3° Nota:</label>
+                        <input type="number" name="" id="nota3" autocomplete="off">
+                    </div>
+                </section>
+                <aside>
+                    <h2>MÉDIA</h2>
+                    <input type="text" id="media" readonly>
+                </aside>
+            </div>
+            <div class="resultado">
+                <button type="button" onclick="limparInputs()">Limpar</button>
+                <button onclick="calcularMedia()" type="button">Calcular</button>
+                <p id="chamada"></p>
+            </div>
+
+        </form>
+    </main>
+</body>
+</html>
