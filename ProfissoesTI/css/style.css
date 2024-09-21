@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: justify;
+    box-sizing: border-box;
+}
+
+h1 {
+    text-align: center;
+    margin: 20px 0; /* Espaçamento acima e abaixo do título */
+    color: white;
+    text-shadow: 0px 0px 20px white;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    padding: 10px 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: linear-gradient(to bottom, #0b0b14 60%, #000000);
+    
+}
+
+a {
+    text-decoration: none;
+}
+
+.web, .nocode, .analista {
+    width: 300px;
+    height: 150px;
+    margin: 0 10px;
+    padding: 20px;
+    border-radius: 8px;
+    border: 3px solid #422680;
+    color: #422680;
+    background-color: #0b0b14;
+    text-align: center;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.web:hover, .nocode:hover, .analista:hover {
+    width: 350px;
+    height: 175px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #422680;
+    box-shadow: 0px 0px 30px #422680;
+}
+
+.conteudo {
+    position: relative;
+    background-color: #422680;
+    color: black;
+    width: 70vw;
+    height: 500px;
+    padding: 20px;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0px 0px 30px #422680;
+}
+
+h3 {
+    font-size: 2em;
+}
+
+.conteudo > p {
+    padding: 15px;
+    line-height: 1.3em;
+    text-indent:  20px;
+    position: relative;
+}
+
+.conteudo > a {
+    font-size: 1.3em;
+    position: absolute;
+    border-radius: 30px;
+    border: 3px solid white ;
+    color: white;
+    background-color: #00000013;
+    padding: 5px;
+    text-align: center;
+    width: 150px;
+    bottom: 20px;
+    left: 20px;
+    cursor: pointer;
+}
+
+.conteudo > a:hover {
+    background-color: white;
+    color: #422680;
+}
+
+
+
+
