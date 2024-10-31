@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <form action="#" method="post">
+        <h1>Bem Vindo!</h1>
+        <h2>Nos diga um pouco mais sobre você...</h2>
+        <fieldset>
+            <legend>Informações Pessoais</legend>
+            <div class="input-group">
+                <input type="text" name="nNome" id="iNome" placeholder="Nome Completo">
+            </div>
+            <div class="input-group">
+                <p>Genero</p>
+                <input type="radio" name="nGenero" id="iMasc">
+                <label for="iMasc">Masculino</label>
+                <input type="radio" name="nGenero" id="iFem">
+                <label for="iFem">Feminino</label>
+                <input type="radio" name="nGenero" id="iOutro">
+                <label for="iOutro">Outro</label>
+            </div>
+            <div class="input-group">
+                <label for="iData">Data de Nascimento</label>
+                <input type="date" name="nData" id="iData">
+            </div>
+            <div class="input-group">
+                <label for="iEstado">Estado</label>
+                <select name="nEstado" id="iEstado">
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="MG">Minas Gerais</option>
+                    <option value="RS">Rio Grande do Sul</option>
+                </select>
+                <label for="iCidade">Cidade</label>
+                <select name="nCidade" id="iCidade">
+                    <option value="SP">São Paulo</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="GRU">Guarulhos</option>
+                </select>
+            </div>
+            <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Escreva uma breve descrição sobre você..."></textarea>
+        </fieldset>
+        <fieldset>
+            <legend> Credenciais </legend>
+            <div class="input-group">
+                <input type="email" name="nEmail" id="iEmail" placeholder="Insira seu email de contato">
+            </div>
+            <div class="input-group">
+                <input type="password" name="nSenha" id="iSenha" placeholder="Insira sua senha">
+            </div>
+            <div class="input-group">
+                <input type="password" name="nCsenha" id="iCsenha" placeholder="Confirme sua senha">
+            </div>
+        </fieldset>
+    
+        <button type="submit">Enviar</button>
+    </form>
+</body>
+</html>
