@@ -13,6 +13,7 @@
     --cor2: #13361c;
     --cor3: #345635;
     --branco: #fdf4ea;
+    --input: #ffffff73;
     --preto: #091b13;
 }
 
@@ -20,7 +21,6 @@ body {
     width: 98vw;
     height: 100%;
     display: flex;
-    margin: 100px 0px;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(to bottom right, var(--preto), var(--cor1), var(--cor2));
@@ -30,6 +30,7 @@ form {
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
+    margin: 50px 0px;
     border-radius: 10px;
     background-color: var(--branco);
     box-shadow: 0px 0px 20px var(--preto);
@@ -62,25 +63,119 @@ fieldset {
 
 fieldset > legend {
 padding: 0px 5px;
-
 }
 
 .input-group {
-    margin: 20px 0px
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
 }
 
+.input-group .icon {
+    position: absolute;
+    left: 10px;
+    top: 45%;
+    transform: translateY(-50%);
+    font-size: 30px;
+    color: var(--preto);
+}
+
+.input-group label.campo {
+    position: absolute;
+    left: 45px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px;
+    color: #888;
+    pointer-events: none;
+    transition: all 0.3s;
+}
+
+input[type="radio"] {
+    display: inline-block;
+    opacity: 1;
+    width: 0px;
+}
+
+.radio-custom {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 195px;
+    height: 60px;
+    color: var(--preto);
+    transition: all 0.3s ease;
+}
+
+.radio-group {
+    display: flex;
+    border: 3px solid var(--cor2);
+}
+
+.radio-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.input-group input[type="radio"]:checked + .radio-custom {
+    background-color: var(--cor2);
+    color: var(--branco);
+}
 
 input:not([type="radio"]) {
-    width: 50%;
+    width: 300px;
     height: 30px;
     font-size: 1em;
     border-radius: 50px;
-    border: 2px solid var(--preto);
-    padding: 5px 10px;
+    background-color: var(--input);
+    outline: none;
+    border: 3px solid var(--preto);
+    padding: 5px 5px 5px 40px;
+    transition: 0.3s;
+}
+
+input:not([type="radio"]):hover { 
+    background-color: #ebe3d9;
+}
+
+
+input[type="date"] {
+    padding: 5px;
+    width: 150px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: var(--input);
+}
+
+.input-group input:focus {
+    border: 3px solid var(--cor3);
+    box-shadow: 0px 3px 2px var(--cor3);
+}
+
+.input-group input:focus, .input-group input:not(:placeholder-shown) + label.campo {
+    top: -10px;
+    left: 15px;
+}
+
+select {
+    margin: 0px 5px;
+    border: 3px solid var(--preto);
+    height: 30px;
+    font-size: .8em;
+    background-color: var(--input);
 }
 
 textarea {
     resize: none;
+    width: 97%;
+    color: var(--preto);
+    font-size: 1em;
+    padding: 5px;
+    border: 3px solid var(--preto);
+    border-radius: 10px;
+    background-color: var(--input);
 }
 
 button {
@@ -98,7 +193,7 @@ button {
 
 
 button:hover {
-    background-color: var(--cor1);
-    box-shadow: 0px 0px 5px var(--cor1);
+    background-color: var(--cor3);
+    border-color: var(--cor3);
     color: var(--branco);
 }

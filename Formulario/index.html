@@ -6,56 +6,74 @@
     <title>Cadastro</title>
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
 </head>
 <body>
-    <form action="#" method="post">
+    <form action="#" method="get"> 
         <h1>Bem Vindo!</h1>
         <h2>Nos diga um pouco mais sobre você...</h2>
         <fieldset>
             <legend>Informações Pessoais</legend>
             <div class="input-group">
-                <input type="text" name="nNome" id="iNome" placeholder="Nome Completo">
+                <span class="icon">&#x2687;</span>
+                <input type="text" aria-label="Nome do usuário" name="nNome" id="iNome" placeholder=" " required autocomplete="off" tabindex="1">
+                <label for="email" class="campo">Nome Completo</label>
             </div>
             <div class="input-group">
                 <p>Genero</p>
-                <input type="radio" name="nGenero" id="iMasc">
-                <label for="iMasc">Masculino</label>
-                <input type="radio" name="nGenero" id="iFem">
-                <label for="iFem">Feminino</label>
-                <input type="radio" name="nGenero" id="iOutro">
-                <label for="iOutro">Outro</label>
+                <div class="radio-group">
+                    <label class="radio-container">
+                        <input type="radio" name="nGenero" id="iMasc" checked aria-label="Gênero Masculino">
+                        <span class="radio-custom">Masculino</span>
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="nGenero" id="iFem" aria-label="Gênero Feminino">
+                        <span class="radio-custom">Feminino</span>
+                    </label>
+                    <label class="radio-container">
+                        <input type="radio" name="nGenero" id="iOutro" aria-label="Outro gênero">
+                        <span class="radio-custom">Outro</span>
+                    </label>
+                </div>
             </div>
             <div class="input-group">
-                <label for="iData">Data de Nascimento</label>
-                <input type="date" name="nData" id="iData">
+                <p>Data de Nascimento</p>
+                <input type="date" name="nData" id="iData" tabindex="2" aria-label="Data de nascimento do usuário">
             </div>
             <div class="input-group">
-                <label for="iEstado">Estado</label>
-                <select name="nEstado" id="iEstado">
+                <label for="iEstado">Estado </label>
+                <select name="nEstado" id="iEstado" tabindex="3" aria-label="Estado do usuário">
                     <option value="SP">São Paulo</option>
                     <option value="RJ">Rio de Janeiro</option>
                     <option value="MG">Minas Gerais</option>
                     <option value="RS">Rio Grande do Sul</option>
                 </select>
-                <label for="iCidade">Cidade</label>
-                <select name="nCidade" id="iCidade">
+                <label for="iCidade">Cidade </label>
+                <select name="nCidade" id="iCidade" tabindex="4" aria-label="Cidade do usuário">
                     <option value="SP">São Paulo</option>
                     <option value="RJ">Rio de Janeiro</option>
                     <option value="GRU">Guarulhos</option>
                 </select>
             </div>
-            <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Escreva uma breve descrição sobre você..."></textarea>
+            <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Escreva uma breve descrição sobre você..." tabindex="5"></textarea>
         </fieldset>
         <fieldset>
             <legend> Credenciais </legend>
             <div class="input-group">
-                <input type="email" name="nEmail" id="iEmail" placeholder="Insira seu email de contato">
+                <span class="icon">&#9993</span>
+                <input type="email" name="nEmail" id="iEmail" placeholder=" " required autocomplete="off" tabindex="6" aria-label="Email do usuário">
+                <label for="email" class="campo">Email Address</label>
             </div>
             <div class="input-group">
-                <input type="password" name="nSenha" id="iSenha" placeholder="Insira sua senha">
+                <span class="icon"><i class="fas fa-eye" style="font-size: .8em;"></i></span>
+                <input type="password" name="nSenha" id="iSenha" placeholder=" " required autocomplete="off" tabindex="7" aria-label="Senha do usuário">
+                <label for="email" class="campo">Digite sua senha</label>
             </div>
             <div class="input-group">
-                <input type="password" name="nCsenha" id="iCsenha" placeholder="Confirme sua senha">
+                <span class="icon"><i class="fas fa-eye" style="font-size: .8em;"></i></span>
+                <input type="password" name="nCsenha" id="iCsenha" placeholder=" " required autocomplete="off" tabindex="8" aria-label="Confirmação da senha do usuário">
+                <label for="email" class="campo">Confirme sua senha</label>
             </div>
         </fieldset>
     
