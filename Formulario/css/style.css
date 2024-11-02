@@ -33,7 +33,7 @@ form {
     margin: 50px 0px;
     border-radius: 10px;
     background-color: var(--branco);
-    box-shadow: 0px 0px 20px var(--preto);
+    box-shadow: 0px 0px 10px black, 0px 0px 20px var(--preto), 0px 0px 40px var(--preto);
     font-size: 1.3em;
 }
 
@@ -198,7 +198,7 @@ button {
     width: 150px;
     height: 50px;
     border-radius: 50px;
-    border: 2px solid var(--cor2);
+    border: 3px solid var(--preto);
     background-color: var(--cor2);
     align-self: flex-end;
     transition: .1s;
@@ -209,6 +209,7 @@ button {
 button:hover {
     background-color: var(--cor3);
     border-color: var(--cor3);
+    box-shadow: 0px 0px 20px var(--cor3);
     color: var(--branco);
 }
 

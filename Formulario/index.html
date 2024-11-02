@@ -39,7 +39,7 @@
             </div>
             <div class="input-group">
                 <p>Data de Nascimento</p>
-                <input type="date" name="nData" id="iData" tabindex="2" aria-label="Data de nascimento do usuário" required>
+                <input type="date" name="nData" id="iData" tabindex="2" aria-label="Data de nascimento do usuário" required onchange="conferirErros(event)">
                 <span class="erroData">* Insira uma data válida</span>
             </div>
             <div class="input-group">
@@ -52,7 +52,7 @@
                     <option value="PR">Paraná</option>
                 </select>
                 <label for="iCidade">Cidade </label>
-                <select name="nCidade" id="iCidade" tabindex="4" aria-label="Cidade do usuário">
+                <select name="nCidade" id="iCidade" tabindex="4" aria-label="Cidade do usuário" onchange="conferirErros(event)">
                     <option value=" ">Selecione uma cidade</option>
                     <option value="sp">São Paulo</option>
                     <option value="gru">Guarulhos</option>
@@ -78,7 +78,7 @@
             </div>
             <div class="input-group">
                 <span class="icon icon-csenha" onclick="mostrarSenha('iCsenha', this)"><i class="fas fa-eye" style="font-size: .8em;"></i></span>
-                <input type="password" name="nCsenha" id="iCsenha" placeholder=" " required autocomplete="off" tabindex="8" aria-label="Confirmação da senha do usuário" pattern="(?=.*[0-9].*[0-9])(?=.*[a-zA-Z]).{8,}">
+                <input type="password" name="nCsenha" id="iCsenha" placeholder=" " required autocomplete="off" tabindex="8" aria-label="Confirmação da senha do usuário" pattern="(?=.*[0-9].*[0-9])(?=.*[a-zA-Z]).{8,}" onchange="conferirErros(event)">
                 <label for="iCsenha" class="campo">Confirme sua senha *</label>
                 <span class="erroSenha">* As senhas devem ser as mesmas</span>
             </div>
