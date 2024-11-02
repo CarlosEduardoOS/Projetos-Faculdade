@@ -7,18 +7,18 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
+    <script src="javascipt/script.js"></script>
 </head>
 <body>
-    <form action="#" method="get"> 
+    <form action="#" method="post" onsubmit="return conferirErros(event);"> <!--O formulario não leva pra lugar nenhum de propósito-->
         <h1>Bem Vindo!</h1>
         <h2>Nos diga um pouco mais sobre você...</h2>
         <fieldset>
             <legend>Informações Pessoais</legend>
             <div class="input-group">
                 <span class="icon">&#x2687;</span>
-                <input type="text" aria-label="Nome do usuário" name="nNome" id="iNome" placeholder=" " required autocomplete="off" tabindex="1">
-                <label for="email" class="campo">Nome Completo</label>
+                <input type="text" aria-label="Nome do usuário" name="nNome" id="iNome" placeholder=" " required autocomplete="off" tabindex="1" minlength="10">
+                <label for="email" class="campo">Nome Completo *</label>
             </div>
             <div class="input-group">
                 <p>Genero</p>
@@ -39,44 +39,53 @@
             </div>
             <div class="input-group">
                 <p>Data de Nascimento</p>
-                <input type="date" name="nData" id="iData" tabindex="2" aria-label="Data de nascimento do usuário">
+                <input type="date" name="nData" id="iData" tabindex="2" aria-label="Data de nascimento do usuário" required>
+                <span class="erroData">* Insira uma data válida</span>
             </div>
             <div class="input-group">
                 <label for="iEstado">Estado </label>
-                <select name="nEstado" id="iEstado" tabindex="3" aria-label="Estado do usuário">
+                <select name="nEstado" id="iEstado" tabindex="3" aria-label="Estado do usuário" onchange="mudarCidades()">
                     <option value="SP">São Paulo</option>
-                    <option value="RJ">Rio de Janeiro</option>
                     <option value="MG">Minas Gerais</option>
-                    <option value="RS">Rio Grande do Sul</option>
+                    <option value="RJ">Rio de Janeiro</option>
+                    <option value="BA">Bahia</option>
+                    <option value="PR">Paraná</option>
                 </select>
                 <label for="iCidade">Cidade </label>
                 <select name="nCidade" id="iCidade" tabindex="4" aria-label="Cidade do usuário">
-                    <option value="SP">São Paulo</option>
-                    <option value="RJ">Rio de Janeiro</option>
-                    <option value="GRU">Guarulhos</option>
+                    <option value=" ">Selecione uma cidade</option>
+                    <option value="sp">São Paulo</option>
+                    <option value="gru">Guarulhos</option>
+                    <option value="Cap">Campinas</option>
+                    <option value="sbc">Osasco</option>
+                    <option value="sa">Santo André</option>
                 </select>
+                <span class="erroCidade">* Insira uma cidade válida</span>
             </div>
-            <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Escreva uma breve descrição sobre você..." tabindex="5"></textarea>
+            <textarea id="descricao" name="descricao" rows="4" cols="50" placeholder="Escreva uma breve descrição sobre você... (Opcional)" tabindex="5"></textarea>
         </fieldset>
         <fieldset>
             <legend> Credenciais </legend>
             <div class="input-group">
-                <span class="icon">&#9993</span>
+                <span class="icon-email">&#9993</span>
                 <input type="email" name="nEmail" id="iEmail" placeholder=" " required autocomplete="off" tabindex="6" aria-label="Email do usuário">
-                <label for="email" class="campo">Email Address</label>
+                <label for="iEmail" class="campo">Endereço Email *</label>
             </div>
             <div class="input-group">
-                <span class="icon"><i class="fas fa-eye" style="font-size: .8em;"></i></span>
-                <input type="password" name="nSenha" id="iSenha" placeholder=" " required autocomplete="off" tabindex="7" aria-label="Senha do usuário">
-                <label for="email" class="campo">Digite sua senha</label>
+                <span class="icon icon-senha" onclick="mostrarSenha('iSenha', this)"><i class="fas fa-eye" style="font-size: .8em;"></i></span> <!--O this serve para se referir ao proprio icone q a gente clico bota fé?-->
+                <input type="password" name="nSenha" id="iSenha" placeholder=" " required autocomplete="off" tabindex="7" aria-label="Senha do usuário" pattern="(?=.*[0-9].*[0-9])(?=.*[a-zA-Z]).{8,}">
+                <label for="iSenha" class="campo">Digite sua senha *</label>
             </div>
             <div class="input-group">
-                <span class="icon"><i class="fas fa-eye" style="font-size: .8em;"></i></span>
-                <input type="password" name="nCsenha" id="iCsenha" placeholder=" " required autocomplete="off" tabindex="8" aria-label="Confirmação da senha do usuário">
-                <label for="email" class="campo">Confirme sua senha</label>
+                <span class="icon icon-csenha" onclick="mostrarSenha('iCsenha', this)"><i class="fas fa-eye" style="font-size: .8em;"></i></span>
+                <input type="password" name="nCsenha" id="iCsenha" placeholder=" " required autocomplete="off" tabindex="8" aria-label="Confirmação da senha do usuário" pattern="(?=.*[0-9].*[0-9])(?=.*[a-zA-Z]).{8,}">
+                <label for="iCsenha" class="campo">Confirme sua senha *</label>
+                <span class="erroSenha">* As senhas devem ser as mesmas</span>
             </div>
         </fieldset>
-    
+        <span class="mensagem">A senha deve conter</span>
+        <span class="mensagem">- Ao menos 8 caracteres</span>
+        <span class="mensagem">- 2 sendo números</span>
         <button type="submit">Enviar</button>
     </form>
 </body>
