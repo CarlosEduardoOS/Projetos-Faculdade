@@ -1,20 +1,6 @@
 function conferirErros(event) {
     let temErro = false; // isso aqui a gente vai usar pra ser o retorno de todos os erros, assim todos os erros podem disparar ao mesmo tempo
 
-
-    //data
-    let nascimento = parseFloat(document.querySelector('input#iData').value);
-    if (nascimento < 1900 || nascimento > 2024) {
-        document.querySelector("span.erroData").style.opacity = "1";
-        document.querySelector("#iData").style.borderColor = "red";
-        document.querySelector("#iData").style.boxShadow = "0px 0px 5px red";
-        temErro = true;
-    } else {
-        document.querySelector("span.erroData").style.opacity = "0";
-        document.querySelector("#iData").style.borderColor = "var(--preto)";
-        document.querySelector("#iData").style.boxShadow = "0px 0px 5px var(--preto)";
-    }
-
     //cidade
     let cidade = document.querySelector('#iCidade').value;
     if (cidade === " ") { 
@@ -48,6 +34,21 @@ function conferirErros(event) {
 
     if (temErro) {
         event.preventDefault(); // Impede o envio do formulário
+    }
+}
+
+function conferirData() {
+    let temErro = false;
+    let nascimento = parseFloat(document.querySelector('input#iData').value);
+    if (nascimento < 1900 || nascimento > 2024) {
+        document.querySelector("span.erroData").style.opacity = "1";
+        document.querySelector("#iData").style.borderColor = "red";
+        document.querySelector("#iData").style.boxShadow = "0px 0px 5px red";
+        temErro = true;
+    } else {
+        document.querySelector("span.erroData").style.opacity = "0";
+        document.querySelector("#iData").style.borderColor = "var(--preto)";
+        document.querySelector("#iData").style.boxShadow = "0px 0px 5px var(--preto)";
     }
 }
 
