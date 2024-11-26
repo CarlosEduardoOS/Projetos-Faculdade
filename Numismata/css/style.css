@@ -86,7 +86,6 @@ section a {
     padding: 10px 30px;
     border-radius: 50px;
     background-image: linear-gradient(to right, #243d25, #457947);
-    transition: .3s;
 }
 
 strong {
