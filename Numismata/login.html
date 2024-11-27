@@ -3,20 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/login.css">
     <script src=""></script>
     <title>Numismata</title>
+    <script src="javascript/script.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav>
-        <a href="index.html"><img src="img/moeda_logo.png" alt="logo moeda"></a>
-        <ul>
-            <li><a href="sobre.html">Sobre</a></li>
-            <li><a href="galeria.html">Galeria</a></li>
-            <li><a href="dicas.html">Dicas</a></li>
-            <li><a href="login.html">Comunidade</a></li>
-        </ul>
-    </nav>
+    <main>
+        <aside>
+            <div>
+                <h1>Bem vindo</h1>
+                <h1>De volta!</h1>
+            </div>
+        </aside>
+        <section>
+            <form action="#" method="post" onsubmit="return conferirErros(event);">
+                <h1>Login</h1>
+                <h2>Bem vindo de volta! Por favor faça login na sua conta para continuar.</h2>
+                <div class="input-group">
+                    <span class="icon">&#x2687;</span>
+                    <input type="text" aria-label="Nome do usuário" name="nNome" id="iNome" placeholder=" " required autocomplete="off" tabindex="1" minlength="10">
+                    <label for="email" class="campo">Usuário</label>
+                </div>
+                <div class="input-group">
+                    <span class="icon icon-senha" onclick="mostrarSenha('iSenha', this)"><i class="fas fa-eye" style="font-size: .8em;"></i></span> <!--O this serve para se referir ao proprio icone q a gente clico bota fé?-->
+                    <input type="password" name="nSenha" id="iSenha" placeholder=" " required autocomplete="off" tabindex="7" aria-label="Senha do usuário" pattern="(?=.*[0-9].*[0-9])(?=.*[a-zA-Z]).{8,}">
+                    <label for="iSenha" class="campo">Senha</label>
+                </div>
+                <input type="checkbox" name="nlembrar" id="ilembrar">
+                <label for="ilembrar"></label>
+                <p class="lembrar" style="font-weight: bold; color: black;">Lembre de mim</p>
+                <a href="">Esqueceu a senha?</a>
+                <button type="submit">Login</button>
+                <p>Novo por aqui? <strong><a href="#" style="color: #243d25;">Cadastre-se</a></strong></p>
+            </form>
+        </section>
+    </main>
 </body>
 </html>
